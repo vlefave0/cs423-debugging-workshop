@@ -46,7 +46,9 @@ public class OrderService {
 
         double total = discounts.get("discountedSubtotal") + tax + shipping;
 
-        InventoryService.reserveInventory(products, order);
+        if (errors.size() == 0) {
+            InventoryService.reserveInventory(products, order);
+        }
 
         return new ProcessedOrder(
             order.getId(),
