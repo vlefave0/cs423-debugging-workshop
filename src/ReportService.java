@@ -7,7 +7,7 @@ import java.util.Map;
 public class ReportService {
     public static Product findProductByName(List<Product> products, String name) {
         for (Product product : products) {
-            if (product.getName().toLowerCase().equals(name)) {
+            if (product.getName().trim().equalsIgnoreCase(name.trim())) {
                 return product;
             }
         }
