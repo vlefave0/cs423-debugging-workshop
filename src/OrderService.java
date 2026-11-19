@@ -11,7 +11,7 @@ public class OrderService {
                 continue;
             }
 
-            subtotal += product.getPrice() + item.getQuantity();
+            subtotal += product.getPrice() * item.getQuantity();
         }
 
         return round(subtotal);
