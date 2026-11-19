@@ -56,7 +56,7 @@ public class Validator {
                 errors.add("Quantity must be positive for " + product.getName());
             }
 
-            if (item.getQuantity() != 0 && product.getStock() < 1) {
+            if (item.getQuantity() != 0 && product.getStock() < item.getQuantity()) {
                 errors.add("Not enough inventory for " + product.getName());
             }
         }
