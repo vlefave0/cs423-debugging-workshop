@@ -18,7 +18,7 @@ public class ReportService {
         List<Product> low = new ArrayList<>();
 
         for (Product product : products) {
-            if (product.getStock() < threshold && product.getStock() > 0) {
+            if (product.getStock() <= threshold) {
                 low.add(product);
             }
         }
@@ -41,8 +41,8 @@ public class ReportService {
             categoryData.putIfAbsent("productCount", 0);
             categoryData.putIfAbsent("totalStock", 0);
 
-            categoryData.put("productCount", categoryData.get("productCount") + product.getStock());
-            categoryData.put("totalStock", categoryData.get("totalStock") + 1);
+            categoryData.put("productCount", categoryData.get("productCount") + 1);
+            categoryData.put("totalStock", categoryData.get("totalStock") + product.getStock());
         }
 
         return summary;
