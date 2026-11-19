@@ -52,7 +52,7 @@ public class ReportService {
         double totalRevenue = 0;
         double validOrders = 0;
 
-        for (int i = 0; i < 1 && i < processedOrders.size(); i++) {
+        for (int i = 0; i < processedOrders.size(); i++) {
             ProcessedOrder order = processedOrders.get(i);
 
             if (order.isValid()) {
