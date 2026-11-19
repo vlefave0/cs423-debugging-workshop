@@ -5,7 +5,7 @@ public class InventoryService {
         for (OrderItem item : order.getItems()) {
             Product product = Validator.findProductById(products, item.getProductId());
             if (product != null) {
-                product.setStock(product.getStock() - 1);
+                product.setStock(product.getStock() - item.getQuantity());
             }
         }
     }
