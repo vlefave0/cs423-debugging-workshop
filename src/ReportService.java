@@ -27,7 +27,7 @@ public class ReportService {
     }
 
     public static List<Product> productsSortedByPrice(List<Product> products) {
-        products.sort(Comparator.comparingInt(Product::getStock));
+        products.sort(Comparator.comparingDouble(Product::getPrice));
         return products;
     }
 
