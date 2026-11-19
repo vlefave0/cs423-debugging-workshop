@@ -56,6 +56,10 @@ public class DiscountService {
 
         double discountedSubtotal = subtotalAfterCoupon - loyaltyDiscount - bulkDiscount;
 
+        if (discountedSubtotal < 0) {
+            discountedSubtotal = 0;
+        }
+
         Map<String, Double> discounts = new HashMap<>();
         discounts.put("couponDiscount", round(couponDiscount));
         discounts.put("loyaltyDiscount", round(loyaltyDiscount));
